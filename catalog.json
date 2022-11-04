@@ -9,7 +9,52 @@
       "sources": [
         {
           "container": "bronze/crunchbase",
-          "table_type": "people.delta"
+          "table_type": "people.delta",
+          "cols": [
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "country_code",
+      "coverage": 1,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase",
+          "table_type": "people.delta",
+          "cols": [
+            "country_code"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gender",
+      "coverage": 1,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase",
+          "table_type": "people.delta",
+          "cols": [
+            "gender"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "linkedin_name",
+      "coverage": 1,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase",
+          "table_type": "people.delta",
+          "cols": [
+            "linkedin_url"
+          ]
         }
       ]
     },
@@ -20,11 +65,18 @@
       "sources": [
         {
           "container": "bronze/crunchbase/vertices",
-          "table_type": "organizations.delta"
+          "table_type": "organizations.delta",
+          "cols": [
+            "crb_id"
+          ]
         },
         {
           "container": "bronze/crunchbase/edges",
-          "table_type": "jobs.delta"
+          "table_type": "jobs.delta",
+          "cols": [
+            "source",
+            "target"
+          ]
         }
       ]
     },
@@ -35,18 +87,41 @@
       "sources": [
         {
           "container": "bronze/crunchbase/edges",
-          "table_type": "degrees.delta"
+          "table_type": "degrees.delta",
+          "cols": [
+            "source",
+            "title"
+          ]
         }
       ]
     },
     {
-      "name": "have_phd",
+      "name": "phd_subject",
       "coverage": 0.3,
       "description": "",
       "sources": [
         {
           "container": "bronze/crunchbase/edges",
-          "table_type": "degrees.delta"
+          "table_type": "degrees.delta",
+          "cols": [
+            "source",
+            "subject"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "academic_works_date_start_pot",
+      "coverage": 0.3,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase/edges",
+          "table_type": "degrees.delta",
+          "cols": [
+            "source",
+            "end_date"
+          ]
         }
       ]
     }
