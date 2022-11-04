@@ -1,0 +1,54 @@
+{
+  "entity": "people",
+  "data_source": "crunchbase",
+  "features": [
+    {
+      "name": "name",
+      "coverage": 1,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase",
+          "table_type": "people.delta"
+        }
+      ]
+    },
+    {
+      "name": "orgs_ids",
+      "coverage": 0.8,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase/vertices",
+          "table_type": "organizations.delta"
+        },
+        {
+          "container": "bronze/crunchbase/edges",
+          "table_type": "jobs.delta"
+        }
+      ]
+    },
+    {
+      "name": "have_phd",
+      "coverage": 0.3,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase/edges",
+          "table_type": "degrees.delta"
+        }
+      ]
+    },
+    {
+      "name": "have_phd",
+      "coverage": 0.3,
+      "description": "",
+      "sources": [
+        {
+          "container": "bronze/crunchbase/edges",
+          "table_type": "degrees.delta"
+        }
+      ]
+    }
+  ]
+}
